@@ -19,37 +19,37 @@ namespace CSharpLearningCore
         {
             return DateTime.Today.Year - dateTime.Year;
         }
-    }
-    static public class MyConsole
+        static public double PhuongTrinhBacNhat(double a, double b)
+        {
+            return -b/a;
+        }
+        static public double[] PhuongTrinhBac2(double a, double b, double c)
+        {            
+            double[] nghiem = new double[0];
+
+            double delta = Math.Pow(b, 2) - 4 * a * c;
+            if(delta > 0)
+            {
+                nghiem = new double[2];
+                nghiem[0] = (-b - Math.Sqrt(delta)) / 2 * a;
+                nghiem[1] = (-b + Math.Sqrt(delta)) / 2 * a;
+            }
+            else if (delta == 0)
+            {
+                nghiem = new double[1];
+                nghiem[0] = -b / 2 * a;
+            }
+            else if(delta < 0)
+            {
+                nghiem = new double[0];
+            }
+            return nghiem;
+        }
+    }    
+    public struct NGHIEM
     {
-        static public double NhapSoThuc(string ghiChu)
-        {
-            double kq;
-            Console.Write(ghiChu);
-            kq = double.Parse(Console.ReadLine());
-            return kq;
-        }
-        static public int NhapSoNguyen(string ghiChu)
-        {
-            int kq;
-            Console.Write(ghiChu);
-            kq = int.Parse(Console.ReadLine());
-            return kq;
-        }
-        static public string NhapChuoi(string ghiChu)
-        {
-            string kq;
-            Console.Write(ghiChu);
-            kq = Console.ReadLine();
-            return kq;
-        }
-        static public DateTime NhapNgay(string ghiChu)
-        {
-            DateTime kq;
-            Console.Write(ghiChu);
-            kq = DateTime.Parse(Console.ReadLine());
-            return kq;
-        }
+        public double x1;
+        public double x2;
     }
     public enum GioiTinh
     {

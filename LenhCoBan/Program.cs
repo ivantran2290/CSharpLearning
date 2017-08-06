@@ -9,11 +9,11 @@ namespace LenhCoBan
     {
         static void Main(string[] args)
         {
-            ChuongTrinh_DauTien();
+            //ChuongTrinh_DauTien();
 
-            ChuongTrinh_TinhCanBacHai();
+            //ChuongTrinh_TinhCanBacHai();
 
-            ChuongTrinh_TinhDiemTrungBinh();
+            //ChuongTrinh_TinhDiemTrungBinh();
 
             //TinhTienBanHang();
 
@@ -49,7 +49,9 @@ namespace LenhCoBan
 
             //ChuongTrinh_TinhTienBanHangCoDieuKien();
 
-            //ChuongTrinh_TimThu6Ngay13();
+            //ChuongTrinh_TimThu6Ngay13();    
+
+            ChuonTrinh_GiaPhuongTrinhBacHai();
 
         }
 
@@ -61,11 +63,11 @@ namespace LenhCoBan
             string Ho_Ten;
 
             // Lenh nhap lieu
-            Ho_Ten = MyConsole.NhapChuoi("Nhap vao chuoi: ");
+            Ho_Ten = ConsoleUtils.NhapChuoi("Nhap vao chuoi: ");
 
-            m = MyConsole.NhapSoNguyen("Nhap vao so nguyen: ");
+            m = ConsoleUtils.NhapSoNguyen("Nhap vao so nguyen: ");
 
-            x = MyConsole.NhapSoThuc("Nhap vao so thuc: ");
+            x = ConsoleUtils.NhapSoThuc("Nhap vao so thuc: ");
 
             // Lenh xu ly
             double n = m + x;
@@ -87,7 +89,7 @@ namespace LenhCoBan
             double y;
 
             // Nhap lieu cho x
-            x = MyConsole.NhapSoThuc("x=");
+            x = ConsoleUtils.NhapSoThuc("x=");
 
             // Tinh y
             y = Math.Sqrt(x);
@@ -108,10 +110,10 @@ namespace LenhCoBan
             double tongTien;
 
             // Nhap lieu cho so luong
-            soLuong = MyConsole.NhapSoNguyen("Nhap so luong: ");
+            soLuong = ConsoleUtils.NhapSoNguyen("Nhap so luong: ");
 
             // Nhap lieu cho don gia
-            donGia = MyConsole.NhapSoThuc("Nhap don gia: ");
+            donGia = ConsoleUtils.NhapSoThuc("Nhap don gia: ");
 
             // Xu ly tinh tien
             tongTien = soLuong * donGia;
@@ -138,16 +140,16 @@ namespace LenhCoBan
             double diemTrungBinh;
 
             // Nhap lieu cho Ho Ten
-            hoTen = MyConsole.NhapChuoi("Nhap Ho Ten: ");
+            hoTen = ConsoleUtils.NhapChuoi("Nhap Ho Ten: ");
 
             // Nhap lieu cho Toan
-            diemToan = MyConsole.NhapSoThuc("Nhap diem Toan: ");
+            diemToan = ConsoleUtils.NhapSoThuc("Nhap diem Toan: ");
 
             // Nhap lieu cho Van
-            diemVan = MyConsole.NhapSoThuc("Nhap diem Van: ");
+            diemVan = ConsoleUtils.NhapSoThuc("Nhap diem Van: ");
 
             // Nhap lieu cho Anh Van
-            diemAnh = MyConsole.NhapSoThuc("Nhap diem Anh: ");
+            diemAnh = ConsoleUtils.NhapSoThuc("Nhap diem Anh: ");
 
             // Xu ly tinh diem trung binh
             diemTrungBinh = (diemToan * 2 + diemVan * 2 + diemAnh) / 5;
@@ -168,10 +170,10 @@ namespace LenhCoBan
             DateTime ngayHienHanh;
 
             // Nhap ho ten nhan vien
-            hoTen = MyConsole.NhapChuoi("Ho ten: ");
+            hoTen = ConsoleUtils.NhapChuoi("Ho ten: ");
 
             // Nhap ngay sinh nhan vien
-            ngaySinh = MyConsole.NhapNgay("Ngay sinh format MM/DD/YYYY: ");
+            ngaySinh = ConsoleUtils.NhapNgay("Ngay sinh format MM/DD/YYYY: ");
 
             // Tinh nam hien hanh
             ngayHienHanh = DateTime.Now;
@@ -193,13 +195,13 @@ namespace LenhCoBan
             DateTime ngayRut;
 
             // Nhap ho ten
-            hoTen = MyConsole.NhapChuoi("Nhap ho ten: ");
+            hoTen = ConsoleUtils.NhapChuoi("Nhap ho ten: ");
 
             // Nhap ngay gui
-            ngayGui = MyConsole.NhapNgay("Nhap ngay gui theo dinh dang MM/DD/YYYY: ");
+            ngayGui = ConsoleUtils.NhapNgay("Nhap ngay gui theo dinh dang MM/DD/YYYY: ");
 
             // Nhap ngay rut
-            ngayRut = MyConsole.NhapNgay("Nhap ngay rut theo dinh dang MM/DD/YYYY: ");
+            ngayRut = ConsoleUtils.NhapNgay("Nhap ngay rut theo dinh dang MM/DD/YYYY: ");
 
             // Xu ly tinh so ngay gui
             TimeSpan thoiGianGui = ngayRut.Subtract(ngayGui);
@@ -234,10 +236,10 @@ namespace LenhCoBan
             TimeSpan thoiGianConLaiTruocKhiVeHuu;       //Timespane, thoi gian con lai
 
             //Nhap lieu cho ho ten
-            hoTen = MyConsole.NhapChuoi("Ho ten: ");
+            hoTen = ConsoleUtils.NhapChuoi("Ho ten: ");
 
             //Nhap lieu cho ngay sinh
-            ngaySinh = MyConsole.NhapNgay("Nhap ngay sinh: ");
+            ngaySinh = ConsoleUtils.NhapNgay("Nhap ngay sinh: ");
 
             //Xu ly du lieu: 
             ngayCuaNgaySinh = ngaySinh.Day;     //so thu tu ngay trong ngay sinh = lay ngay trong ngay sinh
@@ -287,11 +289,11 @@ namespace LenhCoBan
             double tuSo, mauSo;
 
             // Nhap lieu cho 5 so thuc xM, yM, a, b, c
-            xM = MyConsole.NhapSoThuc("xM=");
-            yM = MyConsole.NhapSoThuc("yM=");
-            a  = MyConsole.NhapSoThuc("a=");
-            b  = MyConsole.NhapSoThuc("b=");
-            c  = MyConsole.NhapSoThuc("c=");
+            xM = ConsoleUtils.NhapSoThuc("xM=");
+            yM = ConsoleUtils.NhapSoThuc("yM=");
+            a  = ConsoleUtils.NhapSoThuc("a=");
+            b  = ConsoleUtils.NhapSoThuc("b=");
+            c  = ConsoleUtils.NhapSoThuc("c=");
 
             //tuSo = Tri tuyet doi(a*xM + b*yM + C)
             tuSo = Math.Abs(a * xM + b * yM + c);
@@ -360,7 +362,7 @@ namespace LenhCoBan
             int soKiTu;         // Khai bao so nguyen cnt
 
             // Nhap lieu n la so nguyen bat ki
-            soBatki = MyConsole.NhapSoNguyen("Nhap n= ");
+            soBatki = ConsoleUtils.NhapSoNguyen("Nhap n= ");
 
             // Xy ly chinh
             soKiTu = soBatki.ToString().Length;  // cnt so chu so cua n
@@ -670,13 +672,13 @@ namespace LenhCoBan
 
             int kichThuocMang;
 
-            kichThuocMang = MyConsole.NhapSoNguyen("Nhap so phan tu cua mang d = ");
+            kichThuocMang = ConsoleUtils.NhapSoNguyen("Nhap so phan tu cua mang d = ");
 
             int[] d = new int[kichThuocMang];
 
             for(int i =0; i<d.Length; i++)
             {
-                d[i] = MyConsole.NhapSoNguyen("d[" + i + "]=");
+                d[i] = ConsoleUtils.NhapSoNguyen("d[" + i + "]=");
             }
 
             Console.WriteLine("Dach sang mang vua nhap: ");
@@ -694,7 +696,7 @@ namespace LenhCoBan
             int siSoLopHoc;
 
             //Nhap so luong hoc sinh cua lop hoc
-            siSoLopHoc = MyConsole.NhapSoNguyen("Nhap si so lop: ");
+            siSoLopHoc = ConsoleUtils.NhapSoNguyen("Nhap si so lop: ");
             dsHocSinh = new HOCSINH[siSoLopHoc];
 
             //Nhap lieu cho mang hoc sinh
@@ -708,10 +710,10 @@ namespace LenhCoBan
                 Console.WriteLine("Nhap thong tin hoc sinh thu {0}", i+1);
 
                 //Nhap thong tin chi tiet
-                hocSinh.hoTen    = MyConsole.NhapChuoi("Ho Ten: ");
-                hocSinh.diemToan = MyConsole.NhapSoThuc("Diem Toan: ");
-                hocSinh.diemVan  = MyConsole.NhapSoThuc("Diem Van: ");
-                hocSinh.diemAnh  = MyConsole.NhapSoThuc("Diem Anh: ");
+                hocSinh.hoTen    = ConsoleUtils.NhapChuoi("Ho Ten: ");
+                hocSinh.diemToan = ConsoleUtils.NhapSoThuc("Diem Toan: ");
+                hocSinh.diemVan  = ConsoleUtils.NhapSoThuc("Diem Van: ");
+                hocSinh.diemAnh  = ConsoleUtils.NhapSoThuc("Diem Anh: ");
 
                 //Tinh diem trung binh moi hoc sinh
                 hocSinh.diemTB = TinhToan_DiemTrungBinh(hocSinh.diemToan, hocSinh.diemVan, hocSinh.diemAnh);
@@ -846,7 +848,7 @@ namespace LenhCoBan
             int nam;
 
             //Nhap lieu cho nam
-            nam = MyConsole.NhapSoNguyen("Nhap nam can tim thu 6 ngay 13: ");
+            nam = ConsoleUtils.NhapSoNguyen("Nhap nam can tim thu 6 ngay 13: ");
 
             //Khai bao bien ngay kq
             DateTime kq = new DateTime();
@@ -864,6 +866,31 @@ namespace LenhCoBan
                 }
             }
             #endregion
+        }
+
+        static void ChuonTrinh_GiaPhuongTrinhBacHai()
+        {
+            double a = ConsoleUtils.NhapSoThuc("a=");
+            double b = ConsoleUtils.NhapSoThuc("b=");
+            double c = ConsoleUtils.NhapSoThuc("c=");
+            if (a == 0)
+            {
+                Console.WriteLine("a khong the la 0");
+                return;
+            }
+            double[] nghiem = CommonUtils.PhuongTrinhBac2(a, b, c);
+            if (nghiem.Length == 2)
+            {
+                Console.WriteLine("Phuong trinh co 2 nghiem la x1 = {0}, x2 = {1}", nghiem[0], nghiem[1]);
+            }
+            else if (nghiem.Length == 1)
+            {
+                Console.WriteLine("Phuong trinh co 1 nghiem la x = {0}", nghiem[0]);
+            }
+            else if (nghiem.Length == 0)
+            {
+                Console.WriteLine("Phuong trinh vo nghiem");
+            }
         }
 
         static HOCSINH TinhToan_TimHocSinhGioiNhat(HOCSINH[] dsHocSinh)
@@ -905,7 +932,5 @@ namespace LenhCoBan
         {
             return soLuong * donGia * (1- giamGia);
         }
-
-
     }
 }

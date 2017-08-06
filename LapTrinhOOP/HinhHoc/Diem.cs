@@ -29,9 +29,9 @@ namespace LapTrinhOOP.HinhHoc
         {
             Console.WriteLine("------Nhap toa do diem------");
 
-            _name = MyConsole.NhapChuoi("Ten= ");
-            _x = MyConsole.NhapSoThuc("x= ");
-            _y = MyConsole.NhapSoThuc("y= ");
+            _name = ConsoleUtils.NhapChuoi("Ten= ");
+            _x = ConsoleUtils.NhapSoThuc("x= ");
+            _y = ConsoleUtils.NhapSoThuc("y= ");
         }
 
         public void XuatToaDo()

@@ -27,8 +27,8 @@ namespace LapTrinhOOP.BatDau
         {
             Console.WriteLine("------Nhap thong tin hoc sinh------");
 
-            _hoTen = MyConsole.NhapChuoi("Nhap ho ten: ");
-            _ngaySinh = MyConsole.NhapNgay("Nhap ngay sinh: ");
+            _hoTen = ConsoleUtils.NhapChuoi("Nhap ho ten: ");
+            _ngaySinh = ConsoleUtils.NhapNgay("Nhap ngay sinh: ");
 
             Console.Write("Gioi tinh (1/0): ");
             _gioiTinh = (GioiTinh)Enum.Parse(typeof(GioiTinh), Console.ReadLine());
@@ -38,9 +38,9 @@ namespace LapTrinhOOP.BatDau
         {
             Console.WriteLine("------Nhap ket qua hoc tap------");
 
-            _diemToan = MyConsole.NhapSoThuc("Nhap diem Toan: ");
-            _diemVan  = MyConsole.NhapSoThuc("Nhap diem Van: ");
-            _diemAnh  = MyConsole.NhapSoThuc("Nhap diem Anh: ");
+            _diemToan = ConsoleUtils.NhapSoThuc("Nhap diem Toan: ");
+            _diemVan  = ConsoleUtils.NhapSoThuc("Nhap diem Van: ");
+            _diemAnh  = ConsoleUtils.NhapSoThuc("Nhap diem Anh: ");
         }
 
         public void XuatKetQuaHocTap()

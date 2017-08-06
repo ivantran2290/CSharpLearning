@@ -29,9 +29,9 @@ namespace LapTrinhOOP.DaHinh
         {
             Console.WriteLine("------Nhap thong tin------");
 
-            _name = MyConsole.NhapChuoi("Ten= ");
-            _height = MyConsole.NhapSoThuc("Chieu cao= ");
-            _weight = MyConsole.NhapSoThuc("Can nang= ");
+            _name = ConsoleUtils.NhapChuoi("Ten= ");
+            _height = ConsoleUtils.NhapSoThuc("Chieu cao= ");
+            _weight = ConsoleUtils.NhapSoThuc("Can nang= ");
         }
         public void XuatThongTin()
         {
