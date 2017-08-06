@@ -882,6 +882,7 @@ namespace LenhCoBan
             int nam;
 
             //Nhap lieu cho nam
+            Console.Write("Nhap nam can tim thu 6 ngay 13: ");
             nam = int.Parse(Console.ReadLine());
 
             //Khai bao bien ngay kq
