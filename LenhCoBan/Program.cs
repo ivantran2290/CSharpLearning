@@ -878,7 +878,7 @@ namespace LenhCoBan
                 Console.WriteLine("a khong the la 0");
                 return;
             }
-            double[] nghiem = CommonUtils.PhuongTrinhBac2(a, b, c);
+            double[] nghiem = MathUtils.PhuongTrinhBac2(a, b, c);
             if (nghiem.Length == 2)
             {
                 Console.WriteLine("Phuong trinh co 2 nghiem la x1 = {0}, x2 = {1}", nghiem[0], nghiem[1]);

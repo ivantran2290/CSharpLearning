@@ -20,7 +20,7 @@ namespace LapTrinhOOP.BatDau
         public double DiemVan { get => _diemVan; set => _diemVan = value; }
         public double DiemAnh { get => _diemAnh; set => _diemAnh = value; }
         public double DiemTrungBinh { get => (_diemToan * 2 + _diemVan * 2 + _diemAnh) / 5;}
-        public double Tuoi { get => CommonUtils.TinhTuoi(_ngaySinh); }
+        public double Tuoi { get => MathUtils.TinhTuoi(_ngaySinh); }
         public GioiTinh GioiTinh { get => _gioiTinh; set => _gioiTinh = value; }
 
         public void NhapThongTin()
