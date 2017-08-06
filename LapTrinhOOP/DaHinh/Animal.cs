@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using CSharpLearningCore;
 
 namespace LapTrinhOOP.DaHinh
 {
     abstract class Animal
     {
         private string _name;
-        private string _height;
-        private string _weight;
+        private double _height;
+        private double _weight;
         private static int _count;
 
         public Animal()
@@ -16,9 +17,10 @@ namespace LapTrinhOOP.DaHinh
             _count++;
         }
 
-        public string Height { get => _height; set => _height = value; }
-        public string Weight { get => _weight; set => _weight = value; }
-        public string Name { get => _name; set => _name = value; }
+
+        public string Name { get => _name; set => _name = value; }        
+        public double Height { get => _height; set => _height = value; }
+        public double Weight { get => _weight; set => _weight = value; }
         public static int Count { get => _count; }
 
         public abstract void Speak();
@@ -27,14 +29,9 @@ namespace LapTrinhOOP.DaHinh
         {
             Console.WriteLine("------Nhap thong tin------");
 
-            Console.Write("Ten= ");
-            _name = Console.ReadLine();
-
-            Console.Write("Chieu cao= ");
-            _height = Console.ReadLine();
-
-            Console.Write("Can nang= ");
-            _weight = Console.ReadLine();
+            _name = MyConsole.NhapChuoi("Ten= ");
+            _height = MyConsole.NhapSoThuc("Chieu cao= ");
+            _weight = MyConsole.NhapSoThuc("Can nang= ");
         }
         public void XuatThongTin()
         {

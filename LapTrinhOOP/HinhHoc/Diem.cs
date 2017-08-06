@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using CSharpLearningCore;
 
 namespace LapTrinhOOP.HinhHoc
 {
@@ -28,14 +29,9 @@ namespace LapTrinhOOP.HinhHoc
         {
             Console.WriteLine("------Nhap toa do diem------");
 
-            Console.Write("Ten= ");
-            this._name = Console.ReadLine();
-
-            Console.Write("x= ");
-            this._x = double.Parse(Console.ReadLine());
-
-            Console.Write("y= ");
-            this._y = double.Parse(Console.ReadLine());
+            _name = MyConsole.NhapChuoi("Ten= ");
+            _x = MyConsole.NhapSoThuc("x= ");
+            _y = MyConsole.NhapSoThuc("y= ");
         }
 
         public void XuatToaDo()

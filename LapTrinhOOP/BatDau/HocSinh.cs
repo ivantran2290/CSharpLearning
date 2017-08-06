@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using CSharpLearningCore;
 
 namespace LapTrinhOOP.BatDau
 {
@@ -19,18 +20,15 @@ namespace LapTrinhOOP.BatDau
         public double DiemVan { get => _diemVan; set => _diemVan = value; }
         public double DiemAnh { get => _diemAnh; set => _diemAnh = value; }
         public double DiemTrungBinh { get => (_diemToan * 2 + _diemVan * 2 + _diemAnh) / 5;}
-        public double Tuoi { get => CommonUtil.TinhTuoi(_ngaySinh); }
-        internal GioiTinh GioiTinh { get => _gioiTinh; set => _gioiTinh = value; }
+        public double Tuoi { get => CommonUtils.TinhTuoi(_ngaySinh); }
+        public GioiTinh GioiTinh { get => _gioiTinh; set => _gioiTinh = value; }
 
         public void NhapThongTin()
         {
             Console.WriteLine("------Nhap thong tin hoc sinh------");
 
-            Console.Write("Nhap ho ten: ");
-            _hoTen = Console.ReadLine();
-
-            Console.Write("Nhap ngay sinh: ");
-            _ngaySinh = DateTime.Parse(Console.ReadLine());
+            _hoTen = MyConsole.NhapChuoi("Nhap ho ten: ");
+            _ngaySinh = MyConsole.NhapNgay("Nhap ngay sinh: ");
 
             Console.Write("Gioi tinh (1/0): ");
             _gioiTinh = (GioiTinh)Enum.Parse(typeof(GioiTinh), Console.ReadLine());
@@ -40,14 +38,9 @@ namespace LapTrinhOOP.BatDau
         {
             Console.WriteLine("------Nhap ket qua hoc tap------");
 
-            Console.Write("Nhap diem Toan: ");
-            _diemToan = double.Parse(Console.ReadLine());
-
-            Console.Write("Nhap diem Van: ");
-            _diemVan = double.Parse(Console.ReadLine());
-
-            Console.Write("Nhap diem Anh: ");
-            _diemAnh = double.Parse(Console.ReadLine());
+            _diemToan = MyConsole.NhapSoThuc("Nhap diem Toan: ");
+            _diemVan  = MyConsole.NhapSoThuc("Nhap diem Van: ");
+            _diemAnh  = MyConsole.NhapSoThuc("Nhap diem Anh: ");
         }
 
         public void XuatKetQuaHocTap()
