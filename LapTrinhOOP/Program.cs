@@ -9,13 +9,13 @@ namespace LapTrinhOOP
 {
     class Program
     {
-        static void Main(string[] args)
+        static public void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             LuyenTap_Interface();
             Console.ReadLine();
-        }    
-        public static void LuyenTap_Interface()
+        }
+        static public void LuyenTap_Interface()
         {
             Ramen ramen = new Ramen();
             ramen.gioMoCua();
@@ -115,5 +115,5 @@ namespace LapTrinhOOP
             //Xuat ket qua hoc tap
             hs.XuatKetQuaHocTap();
         }
-    }    
+    }
 }
