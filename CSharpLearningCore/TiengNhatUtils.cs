@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharpLearningCore
 {
-    static class TiengNhatUtils
+    static public class TiengNhatUtils
     {
         public static string ThuTrongTuan(DateTime dateTime)
         {
