@@ -18,6 +18,7 @@ namespace LapTrinhOOP.HinhHoc
         public Diem()
         {
         }
+
         public Diem(double x, double y)
         {
             this._x = x;
@@ -32,32 +33,29 @@ namespace LapTrinhOOP.HinhHoc
             _x = ConsoleUtils.NhapSoThuc("x= ");
             _y = ConsoleUtils.NhapSoThuc("y= ");
         }
+
         public void XuatToaDo()
         {
             Console.WriteLine("----------------------");
             Console.WriteLine("{0}({1}, {2})", this.Name, this.X, this.Y);
         }        
-        public void Move(double x, double y)
+
+        public void DiChuyenToiGocToaDo()
         {
-            this._x = x;
-            this._y = y;
+            this._x = 0;
+            this._y = 0;
         }
+
         public double KhoangCach(Diem d)
         {
             return Math.Sqrt(Math.Pow(this._x - d._x, 2) + Math.Pow(this._y - d._y, 2));
         }
+
         public static Diem operator +(Diem d1, Diem d2)
         {
             Diem kq = new Diem();
             kq.X = d1.X + d2.X;
             kq.Y = d1.Y + d2.Y;
-            return kq;
-        }
-        public static Diem operator -(Diem d1, Diem d2)
-        {
-            Diem kq = new Diem();
-            kq.X = d1.X - d2.X;
-            kq.Y = d1.Y - d2.Y;
             return kq;
         }
     }
