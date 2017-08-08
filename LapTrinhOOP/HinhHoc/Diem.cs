@@ -48,7 +48,15 @@ namespace LapTrinhOOP.HinhHoc
 
         public double KhoangCach(Diem d)
         {
-            return Math.Sqrt(Math.Pow(this.X - d.X, 2) + Math.Pow(this.Y - d.Y, 2));
+            return Math.Sqrt(Math.Pow(this._x - d._x, 2) + Math.Pow(this._y - d._y, 2));
+        }
+
+        public static Diem operator +(Diem d1, Diem d2)
+        {
+            Diem kq = new Diem();
+            kq.X = d1.X + d2.X;
+            kq.Y = d1.Y + d2.Y;
+            return kq;
         }
     }
 }
