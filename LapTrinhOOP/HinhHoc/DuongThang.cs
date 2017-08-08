@@ -5,7 +5,7 @@ using CSharpLearningCore;
 
 namespace LapTrinhOOP.HinhHoc
 {
-    class DoanThang
+    class DuongThang
     {
         private Diem _diemDau;
         private Diem _diemCuoi;
@@ -14,33 +14,29 @@ namespace LapTrinhOOP.HinhHoc
         public Diem DiemCuoi { get => _diemCuoi; set => _diemCuoi = value; }
         public double ChieuDai { get => this._diemDau.KhoangCach(this._diemCuoi);}
 
-        public DoanThang()
+        public DuongThang()
         {
         }
-
-        public DoanThang(Diem d1, Diem d2)
+        public DuongThang(Diem d1, Diem d2)
         {
             this._diemDau = d1;
             this._diemCuoi = d2;
         }
-
         public void NhapDoanThang(string ghiChu)
         {
             Console.WriteLine(ghiChu);
             this._diemDau.NhapToaDo();
             this._diemCuoi.NhapToaDo();
         }
-
         public void XuatDoanThang()
         {
             Console.WriteLine("Doan thang di qua 2 diem:");
             this._diemDau.XuatToaDo();
             this._diemCuoi.XuatToaDo();
         }
-
-        public double TinhKhoangCach()
+        public double TinhGoc(DuongThang d)
         {
-            return this._diemDau.KhoangCach(this._diemCuoi);
+            return 0;
         }
     }
 }

@@ -74,9 +74,9 @@ namespace LapTrinhOOP
             diemC = new Diem(1, 0);
 
             TamGiac tg = new TamGiac(diemA, diemB, diemC);
-            double ab = new DoanThang(diemA, diemB).ChieuDai;
-            double bc = new DoanThang(diemB, diemC).ChieuDai;
-            double ca = new DoanThang(diemC, diemA).ChieuDai;
+            double ab = new DuongThang(diemA, diemB).ChieuDai;
+            double bc = new DuongThang(diemB, diemC).ChieuDai;
+            double ca = new DuongThang(diemC, diemA).ChieuDai;
 
             Console.WriteLine("Chieu dai doan thang {0} : {1}", "AB", ab);
             Console.WriteLine("Chieu dai doan thang {0} : {1}", "BC", bc);
