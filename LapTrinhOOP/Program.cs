@@ -12,7 +12,7 @@ namespace LapTrinhOOP
         static public void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
-            LuyenTap_Interface();
+            LuyenTap_HinhHoc();
             Console.ReadLine();
         }
         static public void LuyenTap_Interface()
@@ -65,22 +65,25 @@ namespace LapTrinhOOP
         static public void LuyenTap_HinhHoc()
         {
             Diem diemA;
-            diemA = new Diem();
-
-            diemA.NhapToaDo();
-            diemA.XuatToaDo();
+            diemA = new Diem(0,-1);
 
             Diem diemB;
-            diemB = new Diem(0, 6);
-            diemB.Name = "B";
-            diemB.XuatToaDo();
+            diemB = new Diem(0, 1);
 
-            Console.WriteLine("Khoang cach 2 diem la: {0}", diemA.KhoangCach(diemB));
+            Diem diemC;
+            diemC = new Diem(1, 0);
 
-            diemA.DiChuyenToiGocToaDo();
-            diemA.XuatToaDo();
+            TamGiac tg = new TamGiac(diemA, diemB, diemC);
+            double ab = new DoanThang(diemA, diemB).ChieuDai;
+            double bc = new DoanThang(diemB, diemC).ChieuDai;
+            double ca = new DoanThang(diemC, diemA).ChieuDai;
 
-            Console.WriteLine("Khoang cach 2 diem la: {0}", diemA.KhoangCach(diemB));
+            Console.WriteLine("Chieu dai doan thang {0} : {1}", "AB", ab);
+            Console.WriteLine("Chieu dai doan thang {0} : {1}", "BC", bc);
+            Console.WriteLine("Chieu dai doan thang {0} : {1}", "CA", ca);
+            Console.WriteLine("Dien tich tam giac la    : {0}", tg.DienTich);
+            Console.WriteLine("Chu vi tam giac la       : {0}", tg.ChuVi);
+
         }
         static public void LuyenTap_BienStatic()
         {
