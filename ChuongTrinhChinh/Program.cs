@@ -69,14 +69,14 @@ namespace ChuongTrinhChinh
             //diemA.NhapToaDo();
 
             Diem diemB;
-            diemB = new Diem(1, 1);
+            diemB = new Diem(1, 0);
             //diemB.NhapToaDo();
 
             DuongThang dt = new DuongThang(diemA, diemB);
             diemA = new Diem(0, 0);
             //diemA.NhapToaDo();
 
-            diemB = new Diem(-1, 1);
+            diemB = new Diem(0, 4);
             //diemB.NhapToaDo();
 
             DuongThang dtChuan = new DuongThang(diemA, diemB);
