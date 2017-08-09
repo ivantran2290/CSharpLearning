@@ -5,7 +5,7 @@ using CSharpLearningCore;
 
 namespace LapTrinhOOP.BatDau
 {
-    class HocSinh
+    public class HocSinh
     {
         private string _hoTen;
         private GioiTinh _gioiTinh;
@@ -20,7 +20,7 @@ namespace LapTrinhOOP.BatDau
         public double DiemVan { get => _diemVan; set => _diemVan = value; }
         public double DiemAnh { get => _diemAnh; set => _diemAnh = value; }
         public double DiemTrungBinh { get => (_diemToan * 2 + _diemVan * 2 + _diemAnh) / 5;}
-        public double Tuoi { get => MathUtils.TinhTuoi(_ngaySinh); }
+        public double Tuoi { get => CommonUtils.TinhTuoi(_ngaySinh); }
         public GioiTinh GioiTinh { get => _gioiTinh; set => _gioiTinh = value; }
 
         public void NhapThongTin()
@@ -33,7 +33,6 @@ namespace LapTrinhOOP.BatDau
             Console.Write("Gioi tinh (1/0): ");
             _gioiTinh = (GioiTinh)Enum.Parse(typeof(GioiTinh), Console.ReadLine());
         }
-
         public void NhapKetQuaHocTap()
         {
             Console.WriteLine("------Nhap ket qua hoc tap------");
@@ -42,7 +41,6 @@ namespace LapTrinhOOP.BatDau
             _diemVan  = ConsoleUtils.NhapSoThuc("Nhap diem Van: ");
             _diemAnh  = ConsoleUtils.NhapSoThuc("Nhap diem Anh: ");
         }
-
         public void XuatKetQuaHocTap()
         {
             Console.WriteLine("--------Ket qua hoc tap--------");

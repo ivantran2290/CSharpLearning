@@ -5,7 +5,7 @@ using CSharpLearningCore;
 
 namespace LapTrinhOOP.HinhHoc
 {
-    class Diem
+    public class Diem
     {
         private string _name;
         private double _x;

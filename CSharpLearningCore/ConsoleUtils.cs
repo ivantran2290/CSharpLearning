@@ -20,6 +20,15 @@ namespace CSharpLearningCore
             kq = int.Parse(Console.ReadLine());
             return kq;
         }
+
+        static public int NhapSoNguyen(string ghiChu, params object[] args)
+        {
+            int kq;
+            Console.Write(ghiChu, args);
+            kq = int.Parse(Console.ReadLine());
+            return kq;
+        }
+        
         static public string NhapChuoi(string ghiChu)
         {
             string kq;

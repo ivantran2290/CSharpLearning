@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LapTrinhOOP.DaHinh
 {
-    class Chicken:Animal
+    public class Chicken :Animal
     {
         public override void Speak()
         {

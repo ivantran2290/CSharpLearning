@@ -5,11 +5,7 @@ using System.Text;
 namespace CSharpLearningCore
 {
     static public class MathUtils
-    {
-        static public int TinhTuoi(DateTime dateTime)
-        {
-            return DateTime.Today.Year - dateTime.Year;
-        }
+    {        
         static public double PhuongTrinhBacNhat(double a, double b)
         {
             return -b / a;
@@ -35,6 +31,10 @@ namespace CSharpLearningCore
                 nghiem = new double[0];
             }
             return nghiem;
+        }
+        static public double RadToDegree(double rad)
+        {
+            return rad * 180 / Math.PI;
         }
     }
 }

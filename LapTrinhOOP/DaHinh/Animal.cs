@@ -5,7 +5,7 @@ using CSharpLearningCore;
 
 namespace LapTrinhOOP.DaHinh
 {
-    abstract class Animal
+    public abstract class Animal
     {
         private string _name;
         private double _height;

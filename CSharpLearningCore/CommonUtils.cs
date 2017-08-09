@@ -15,6 +15,21 @@ namespace CSharpLearningCore
             }
             return ketQua;
         }
+        static public int TinhTuoi(DateTime dateTime)
+        {
+            return DateTime.Today.Year - dateTime.Year;
+        }
+        static public int TinhTongChuSo(int n)
+        {
+            int S = 0;
+            while (n > 0)
+            {
+                int d = n % 10;
+                S += d;
+                n = n / 10;
+            }
+            return S;
+        }
     }    
     public enum GioiTinh
     {

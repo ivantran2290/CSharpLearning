@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LapTrinhOOP.HinhHoc
 {
-    class TamGiac : HinhHoc
+    public class TamGiac : HinhHoc
     {
         private Diem _diemA;
         private Diem _diemB;
