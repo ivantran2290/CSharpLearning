@@ -14,5 +14,9 @@ namespace LapTrinhOOP.DaHinh
         {
             Console.WriteLine("Chay 2 chan...");
         }
+        public override void An()
+        {
+            Console.WriteLine(this.Name + " an lua");
+        }
     }
 }

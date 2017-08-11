@@ -36,51 +36,72 @@ namespace ChuongTrinhChinh
             soba.An();
             Console.WriteLine("Thoi gian trung {0} la {1} phut", soba.getName(), soba.thoiGianTrunMi());
         }
+        static public void LuyenTap_InterfaceFactoreDP()
+        {
+            ShapeFactory shapeFacotry = new ShapeFactory();
+            Shape shape1 = shapeFacotry.getShape("CIRCLE");
+            shape1.Draw();
+            shape1.Area();
+            Shape shape2 = shapeFacotry.getShape("RECTANGLE");
+            shape2.Draw();
+            shape2.Area();
+            Shape shape3 = shapeFacotry.getShape("SQUARE");
+            shape3.Draw();
+            shape3.Area();
+        }
         static public void LuyenTap_DaHinh()
         {
             Animal cat = new Cat();
-            cat.NhapThongTin();
+            cat.NhapThongTin("Nhap thong tin cho Meo:");
             cat.XuatThongTin();
             cat.Speak();
             cat.Run();
+            cat.An();
 
             Console.WriteLine("So luong animal hien tai la {0} ", Animal.Count);
 
             Animal dog = new Dog();
-            dog.NhapThongTin();
+            dog.NhapThongTin("Nhap thong tin cho Cho:");
             dog.XuatThongTin();
             dog.Speak();
-            cat.Run();
+            dog.Run();
+            dog.An();
 
             Console.WriteLine("So luong animal hien tai la {0} ", Animal.Count);
 
             Animal chicken = new Chicken();
-            dog.NhapThongTin();
-            dog.XuatThongTin();
+            chicken.NhapThongTin("Nhap thong tin cho Ga:");
+            chicken.XuatThongTin();
             chicken.Speak();
             chicken.Run();
+            chicken.An();
 
             Console.WriteLine("So luong animal hien tai la {0} ", Animal.Count);
         }
         static public void LuyenTap_HinhHoc()
         {
-            Diem diemA;
-            diemA = new Diem(0, 0);
+            Diem diemA = new Diem();
+            diemA.NhapToaDo();
+            Diem diemB = new Diem();
+            diemB.NhapToaDo();
+            Diem diemC = new Diem(2, 1);
+            Diem diemD = new Diem(2, -1);
+
+            DoanThang ab = new DoanThang(diemA, diemB);
+            Console.WriteLine("V({0},{1})", ab.VTPT.X, ab.VTPT.Y);
+            Console.WriteLine("U({0},{1})", ab.VTCP.X, ab.VTCP.Y);
+            Console.WriteLine(ab.PTTongQuat);
+            Console.WriteLine(ab.TimDuongTrungTruc().PTTongQuat);
+
+            //DuongThang dt = new DuongThang(diemA, diemB);
+            //diemA = new Diem();
             //diemA.NhapToaDo();
 
-            Diem diemB;
-            diemB = new Diem(1, 0);
+            //diemB = new Diem();
             //diemB.NhapToaDo();
 
-            DuongThang dt = new DuongThang(diemA, diemB);
-            diemA = new Diem(0, 0);
-            //diemA.NhapToaDo();
-
-            diemB = new Diem(0, 4);
-            //diemB.NhapToaDo();
-
-            DuongThang dtChuan = new DuongThang(diemA, diemB);
-            Console.WriteLine("Goc giua 2 duong thang la: {0}", dtChuan.GocVoiDuongThang(dt));
+            //DuongThang dtChuan = new DuongThang(diemA, diemB);
+            //Console.WriteLine("Goc giua 2 duong thang la: {0}", dtChuan.GocVoiDuongThang(dt));
 
             //Console.WriteLine("PT tong quat co dang {0}", dt.PtTongQuat);
             //Console.WriteLine("He so goc: {0}", dt.HeSoGoc);

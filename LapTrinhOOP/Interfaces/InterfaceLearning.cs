@@ -6,7 +6,7 @@ namespace LapTrinhOOP.Interfaces
 {
     public interface IDoAn
     {
-        String getName();
+        string Name { get; set; }
         void An();
         double tinhTien();
         void gioMoCua();
@@ -18,8 +18,17 @@ namespace LapTrinhOOP.Interfaces
         int thoiGianTrunMi();
     }
 
+    public interface Shape
+    {
+        void Draw();
+        void Area();
+    }
+
     public class Ramen : IDoAn, IMiMuoc
     {
+        private string _name;
+        public string Name { get => _name; set => _name = value; }
+
         public string getName()
         {
             return "ラーメン";
@@ -48,6 +57,9 @@ namespace LapTrinhOOP.Interfaces
 
     public class Sushi : IDoAn
     {
+        private string _name;
+        public string Name { get => _name; set => _name = value; }
+
         public string getName()
         {
             return "お寿司";
@@ -72,6 +84,9 @@ namespace LapTrinhOOP.Interfaces
 
     public class Soba : IMiMuoc, IDoAn
     {
+        private string _name;
+        public string Name { get => _name; set => _name = value; }
+
         public void An()
         {
             Console.WriteLine(this.getName() + "をたべた。");
@@ -91,6 +106,65 @@ namespace LapTrinhOOP.Interfaces
         public double tinhTien()
         {
             throw new NotImplementedException();
+        }
+    }
+
+    public class Rectangle : Shape
+    {
+        public void Area()
+        {
+            Console.WriteLine("Dien tich hinh chu nhat");
+        }
+
+        public void Draw()
+        {
+            Console.WriteLine("Drawing Rectangle");
+        }
+    }
+
+    public class Square : Shape
+    {
+        public void Area()
+        {
+            Console.WriteLine("Dien tich hinh vuong");
+        }
+
+        public void Draw()
+        {
+            Console.WriteLine("Drawing Square  ");
+        }
+    }
+
+    public class Circle : Shape
+    {
+        public void Area()
+        {
+            Console.WriteLine("Dien tich hinh chu tron");
+        }
+
+        public void Draw()
+        {
+            Console.WriteLine("Drawing Circle ");
+        }
+    }
+
+    public class ShapeFactory
+    {
+        public Shape getShape(string shapeType)
+        {
+            switch (shapeType)
+            {
+                case null:
+                    return null;
+                case "RECTANGLE":
+                    return new Rectangle();
+                case "SQUARE":
+                    return new Square();
+                case "CIRCLE":
+                    return new Circle();
+                default:
+                    return null;
+            }
         }
     }
 }
