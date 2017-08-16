@@ -46,14 +46,6 @@ namespace LapTrinhOOP.HinhHoc
             kq.X = d1.X - d2.X;
             kq.Y = d1.Y - d2.Y;
             return kq;
-        }
-        public static bool operator ==(ToaDo d1, ToaDo d2)
-        {
-            return d1.X == d2.X && d1.Y == d2.Y;
-        }
-        public static bool operator !=(ToaDo d1, ToaDo d2)
-        {
-            return d1.X != d2.X || d1.Y == d2.Y;
-        }
+        }        
     }
 }

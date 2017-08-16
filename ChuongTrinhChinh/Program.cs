@@ -12,7 +12,7 @@ namespace ChuongTrinhChinh
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.Unicode;
-            LuyenTap_HinhHoc();
+            LuyenTap_InterfaceFactoreDP();
         }
 
         static public void LuyenTap_Interface()
@@ -38,16 +38,55 @@ namespace ChuongTrinhChinh
         }
         static public void LuyenTap_InterfaceFactoreDP()
         {
-            ShapeFactory shapeFacotry = new ShapeFactory();
-            Shape shape1 = shapeFacotry.getShape("CIRCLE");
-            shape1.Draw();
-            shape1.Area();
-            Shape shape2 = shapeFacotry.getShape("RECTANGLE");
-            shape2.Draw();
-            shape2.Area();
-            Shape shape3 = shapeFacotry.getShape("SQUARE");
-            shape3.Draw();
-            shape3.Area();
+            //ShapeFactory shapeFacotry = new ShapeFactory();
+            //IShape shape1 = shapeFacotry.getShape("CIRCLE");
+            //shape1.Draw();
+            //shape1.Area();
+            //IShape shape2 = shapeFacotry.getShape("RECTANGLE");
+            //shape2.Draw();
+            //shape2.Area();
+            //IShape shape3 = shapeFacotry.getShape("SQUARE");
+            //shape3.Draw();
+            //shape3.Area();
+
+            ShapeContainer shapeContainer;
+            shapeContainer = new ShapeContainer(new Rectangle());
+            shapeContainer.Area("Tinh dien tich hinh chu nhat");
+            shapeContainer = new ShapeContainer(new Square());
+            shapeContainer.Area("Tinh dien tich hinh vuong");
+            shapeContainer = new ShapeContainer(new Circle());
+            shapeContainer.Area("Tinh dien tich hinh tron");
+
+            Console.WriteLine("Non Dependencies Injection");
+            NormalClient normalClient = new NormalClient();
+            normalClient.Serve1("s1");
+            normalClient.Serve2("s2");
+            normalClient.Serve3("s3");
+
+            Console.WriteLine("Dependencies Constructor Injection");
+            ConstructorInjectionClient client = new ConstructorInjectionClient(new Service1());
+            client.Serve("s1");
+            client = new ConstructorInjectionClient(new Service2());
+            client.Serve("s2");
+            client = new ConstructorInjectionClient(new Service3());
+            client.Serve("s3");
+
+            Console.WriteLine("Dependencies Setter Injection");
+            SetterInjectionClient setterClient = new SetterInjectionClient();
+            setterClient.Service = new Service1();
+            setterClient.Serve("s1");
+            setterClient.Service = new Service2();
+            setterClient.Serve("s2");
+            setterClient.Service = new Service3();
+            setterClient.Serve("s3");
+
+            Console.WriteLine("Dependencies Method Injection");
+            MethodInjectionClient methodClient = new MethodInjectionClient();
+            methodClient.Serve(new Service1(), "s1");
+            methodClient.Serve(new Service2(), "s2");
+            methodClient.Serve(new Service2(), "s3");
+
+            Console.ReadKey();
         }
         static public void LuyenTap_DaHinh()
         {
