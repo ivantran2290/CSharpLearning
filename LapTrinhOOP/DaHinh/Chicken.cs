@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LapTrinhOOP.DaHinh
 {
-    class Chicken:Animal
+    public class Chicken :Animal
     {
         public override void Speak()
         {
@@ -13,6 +13,10 @@ namespace LapTrinhOOP.DaHinh
         public override void Run()
         {
             Console.WriteLine("Chay 2 chan...");
+        }
+        public override void An()
+        {
+            Console.WriteLine(this.Name + " an lua");
         }
     }
 }

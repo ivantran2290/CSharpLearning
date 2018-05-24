@@ -4,15 +4,19 @@ using System.Text;
 
 namespace LapTrinhOOP.DaHinh
 {
-    class Cat:Animal
+    public class Cat :Animal
     {
         public override void Speak()
         {
-            Console.WriteLine("Meo meo...");
+            Console.WriteLine("Meo keu: meo meo...");
         }
         public override void Run()
         {
-            Console.WriteLine("Chay 4 chan");
+            Console.WriteLine("Meo chay: 4 chan");
+        }
+        public override void An()
+        {
+            Console.WriteLine("Meo an: ca");
         }
     }
 }

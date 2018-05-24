@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace LapTrinhCoBan.DTO
+namespace LapTrinhHam.DTO
 {
-    struct NHANVIEN
+    public struct NHANVIEN
     {
         public string hoTen;
         public DateTime ngaySinh;
         public int tuoi;
     }
-    struct HOCSINH
+    public struct HOCSINH
     {
         public string hoTen;
         public double diemToan;
@@ -18,7 +18,7 @@ namespace LapTrinhCoBan.DTO
         public double diemAnh;
         public double diemTB;
     }
-    struct MATHANG
+    public struct MATHANG
     {
         public string tenMatHang;
         public string loaiMatHang;
