@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CSharpLearningCore
+namespace HuongThaoCore
 {
-    static public class CommonUtils
+    public static class HTCommon
     {        
-        static public long LyThua(int coSo, int soMu)
+        public static int LyThua(int coSo, int soMu)
         {
-            long ketQua = 1;
+            int ketQua = 1;
             for(int i=0; i<soMu; i++)
             {
                 ketQua *= coSo;
             }
             return ketQua;
         }
-        static public int TinhTuoi(DateTime dateTime)
+        public static int TinhTuoi(DateTime dateTime)
         {
             return DateTime.Today.Year - dateTime.Year;
         }
-        static public int TinhTongChuSo(int n)
+        public static int TinhTongChuSo(int n)
         {
             int S = 0;
             while (n > 0)

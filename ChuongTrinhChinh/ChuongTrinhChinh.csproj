@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CSharpLearningCore\CSharpLearningCore.csproj" />
+    <ProjectReference Include="..\CSharpLearningCore\HuongThaoCore.csproj" />
     <ProjectReference Include="..\LapTrinhHam\LapTrinhHam.csproj" />
     <ProjectReference Include="..\LapTrinhOOP\LapTrinhOOP.csproj" />
   </ItemGroup>

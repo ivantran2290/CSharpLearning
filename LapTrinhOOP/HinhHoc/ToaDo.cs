@@ -1,4 +1,4 @@
-﻿using CSharpLearningCore;
+﻿using HuongThaoCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -25,8 +25,8 @@ namespace LapTrinhOOP.HinhHoc
         {
             Console.WriteLine("------Nhap toa do diem------");
 
-            this._x = ConsoleUtils.NhapSoThuc("x= ");
-            this._y = ConsoleUtils.NhapSoThuc("y= ");
+            this._x = HTConnsole.NhapSoThuc("x= ");
+            this._y = HTConnsole.NhapSoThuc("y= ");
         }
         public void XuatToaDo()
         {

@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LapTrinhOOP", "LapTrinhOOP\LapTrinhOOP.csproj", "{DC242A2B-DA1A-4274-ABF7-51D1DDCF9FA9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpLearningCore", "CSharpLearningCore\CSharpLearningCore.csproj", "{668FB3B2-3CD9-4D81-AAC6-2AEF814C5659}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuongThaoCore", "CSharpLearningCore\HuongThaoCore.csproj", "{668FB3B2-3CD9-4D81-AAC6-2AEF814C5659}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChuongTrinhChinh", "ChuongTrinhChinh\ChuongTrinhChinh.csproj", "{90077B5A-D7BC-41BA-B847-AC8EF4CFBB77}"
 EndProject

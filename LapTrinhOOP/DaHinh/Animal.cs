@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using CSharpLearningCore;
+using HuongThaoCore;
 
 namespace LapTrinhOOP.DaHinh
 {
@@ -35,9 +35,9 @@ namespace LapTrinhOOP.DaHinh
         {
             Console.WriteLine(ghiChu);
 
-            Name = ConsoleUtils.NhapChuoi("Ten= ");
-            Height = ConsoleUtils.NhapSoThuc("Chieu cao= ");
-            Weight = ConsoleUtils.NhapSoThuc("Can nang= ");
+            Name = HTConnsole.NhapChuoi("Ten= ");
+            Height = HTConnsole.NhapSoThuc("Chieu cao= ");
+            Weight = HTConnsole.NhapSoThuc("Can nang= ");
         }
 
         // Hàm bình thường không có phép override, chỉ đc kế thừa
@@ -51,7 +51,7 @@ namespace LapTrinhOOP.DaHinh
         }
 
         // Hàm này không có sử dụng thuộc tính hoặc phương thức của đối tượng hiện tại --> nên chúng ta có thể đặt static cho nó
-        static public void ThongChaoMung()
+        public static void ThongChaoMung()
         {
             Console.WriteLine("Chào mừng đến với thế giới động vật");
         }

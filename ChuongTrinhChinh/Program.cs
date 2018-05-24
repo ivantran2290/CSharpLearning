@@ -3,7 +3,7 @@ using LapTrinhOOP.Interfaces;
 using LapTrinhOOP.DaHinh;
 using LapTrinhOOP.HinhHoc;
 using LapTrinhOOP.BatDau;
-using CSharpLearningCore;
+using HuongThaoCore;
 
 namespace ChuongTrinhChinh
 {
@@ -12,10 +12,10 @@ namespace ChuongTrinhChinh
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.Unicode;
-            LuyenTap_InterfaceFactoreDP();
+            LuyenTap_DaHinh();
         }
 
-        static public void LuyenTap_Interface()
+        public static void LuyenTap_Interface()
         {
             Ramen ramen = new Ramen();
             ramen.gioMoCua();
@@ -36,7 +36,7 @@ namespace ChuongTrinhChinh
             soba.An();
             Console.WriteLine("Thoi gian trung {0} la {1} phut", soba.getName(), soba.thoiGianTrunMi());
         }
-        static public void LuyenTap_InterfaceFactoreDP()
+        public static void LuyenTap_InterfaceFactoreDP()
         {
             //ShapeFactory shapeFacotry = new ShapeFactory();
             //IShape shape1 = shapeFacotry.getShape("CIRCLE");
@@ -49,46 +49,65 @@ namespace ChuongTrinhChinh
             //shape3.Draw();
             //shape3.Area();
 
-            ShapeContainer shapeContainer;
-            shapeContainer = new ShapeContainer(new Rectangle());
-            shapeContainer.Area("Tinh dien tich hinh chu nhat");
-            shapeContainer = new ShapeContainer(new Square());
-            shapeContainer.Area("Tinh dien tich hinh vuong");
-            shapeContainer = new ShapeContainer(new Circle());
-            shapeContainer.Area("Tinh dien tich hinh tron");
+            //ShapeContainer shapeContainer;
+            //shapeContainer = new ShapeContainer(new Rectangle());
+            //shapeContainer.Area();
+            //shapeContainer = new ShapeContainer(new Square());
+            //shapeContainer.Area();
+            //shapeContainer = new ShapeContainer(new Circle());
+            //shapeContainer.Area();
 
-            Console.WriteLine("Non Dependencies Injection");
-            NormalClient normalClient = new NormalClient();
-            normalClient.Serve1("s1");
-            normalClient.Serve2("s2");
-            normalClient.Serve3("s3");
+            //Với mỗi Interface, ta define một Module tương ứng
+            //DIContainer.SetModule<IDatabase, Database>();
+            //DIContainer.SetModule<ILogger, Logger>();
+            //DIContainer.SetModule<IEmailSender, SMSSender>();
 
-            Console.WriteLine("Dependencies Constructor Injection");
-            ConstructorInjectionClient client = new ConstructorInjectionClient(new Service1());
-            client.Serve("s1");
-            client = new ConstructorInjectionClient(new Service2());
-            client.Serve("s2");
-            client = new ConstructorInjectionClient(new Service3());
-            client.Serve("s3");
+            //DIContainer.SetModule<Cart, Cart>();
 
-            Console.WriteLine("Dependencies Setter Injection");
-            SetterInjectionClient setterClient = new SetterInjectionClient();
-            setterClient.Service = new Service1();
-            setterClient.Serve("s1");
-            setterClient.Service = new Service2();
-            setterClient.Serve("s2");
-            setterClient.Service = new Service3();
-            setterClient.Serve("s3");
+            //DI Container sẽ tự inject Database, Logger vào Cart
+            var myCart = new Cart(new Database(), new Logger(), new SMSSender());
+            myCart.Checkout(1, 2);
 
-            Console.WriteLine("Dependencies Method Injection");
-            MethodInjectionClient methodClient = new MethodInjectionClient();
-            methodClient.Serve(new Service1(), "s1");
-            methodClient.Serve(new Service2(), "s2");
-            methodClient.Serve(new Service2(), "s3");
+            //DIContainer.SetModule<IDatabase, Database>();
+            //DIContainer.SetModule<ILogger, Logger>();
+            //DIContainer.SetModule<IEmailSender, EmailSender>();
+
+            //DIContainer.SetModule<User, User>();
+            var myUser = new User(new Database(), new EmailSender());
+            myUser.Register();
+
+            //Console.WriteLine("Non Dependencies Injection");
+            //NormalClient normalClient = new NormalClient();
+            //normalClient.Serve1("s1");
+            //normalClient.Serve2("s2");
+            //normalClient.Serve3("s3");
+
+            //Console.WriteLine("Dependencies Constructor Injection");
+            //ConstructorInjectionClient client = new ConstructorInjectionClient(new Service1());
+            //client.Serve("s1");
+            //client = new ConstructorInjectionClient(new Service2());
+            //client.Serve("s2");
+            //client = new ConstructorInjectionClient(new Service3());
+            //client.Serve("s3");
+
+            //Console.WriteLine("Dependencies Setter Injection");
+            //SetterInjectionClient setterClient = new SetterInjectionClient();
+            //setterClient.Service = new Service1();
+            //setterClient.Serve("s1");
+            //setterClient.Service = new Service2();
+            //setterClient.Serve("s2");
+            //setterClient.Service = new Service3();
+            //setterClient.Serve("s3");
+
+            //Console.WriteLine("Dependencies Method Injection");
+            //MethodInjectionClient methodClient = new MethodInjectionClient();
+            //methodClient.Serve(new Service1(), "s1");
+            //methodClient.Serve(new Service2(), "s2");
+            //methodClient.Serve(new Service2(), "s3");
 
             Console.ReadKey();
         }
-        static public void LuyenTap_DaHinh()
+        public static void LuyenTap_DaHinh()
         {
             Animal cat = new Cat();
             cat.NhapThongTin("Nhap thong tin cho Meo:");
@@ -117,7 +136,7 @@ namespace ChuongTrinhChinh
 
             Console.WriteLine("So luong animal hien tai la {0} ", Animal.Count);
         }
-        static public void LuyenTap_HinhHoc()
+        public static void LuyenTap_HinhHoc()
         {
             Diem diemA = new Diem();
             diemA.NhapToaDo();
@@ -164,7 +183,7 @@ namespace ChuongTrinhChinh
             //Console.WriteLine("Chu vi tam giac la       : {0}", tg.ChuVi);
 
         }
-        static public void LuyenTap_BienStatic()
+        public static void LuyenTap_BienStatic()
         {
             //Console.WriteLine("So luong meo ban dau: {0}", BatDau.Cat.Count);
             //Console.WriteLine("-------------------------------");
@@ -180,7 +199,7 @@ namespace ChuongTrinhChinh
             //Console.WriteLine(CommonUtils.LyThua(3, 2));
             //Console.WriteLine(TiengNhatUtils.ThuTrongTuan(DateTime.Today));
         }
-        static public void LuyenTap_KetQuaHocTap()
+        public static void LuyenTap_KetQuaHocTap()
         {
             //Khai bao bien kieu hoc Sinh
             HocSinh hs;

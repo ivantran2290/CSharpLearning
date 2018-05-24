@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CSharpLearningCore
+namespace HuongThaoCore
 {
-    static public class MathUtils
+    public static class HTMath
     {        
-        static public double PhuongTrinhBacNhat(double a, double b)
+        public static double PhuongTrinhBacNhat(double a, double b)
         {
             return -b / a;
         }
-        static public double[] PhuongTrinhBac2(double a, double b, double c)
+        public static double[] PhuongTrinhBac2(double a, double b, double c)
         {
             double[] nghiem = new double[0];
 
@@ -32,7 +32,7 @@ namespace CSharpLearningCore
             }
             return nghiem;
         }
-        static public double RadToDegree(double rad)
+        public static double RadToDegree(double rad)
         {
             return rad * 180 / Math.PI;
         }

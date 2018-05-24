@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using CSharpLearningCore;
+using HuongThaoCore;
 
 namespace LapTrinhOOP.HinhHoc
 {
@@ -119,7 +119,7 @@ namespace LapTrinhOOP.HinhHoc
         {
             double goc = Math.Atan(this.HeSoGoc);
             goc = this.HeSoGoc > 0 ? goc : Math.PI + goc;
-            return MathUtils.RadToDegree(goc);
+            return HTMath.RadToDegree(goc);
         }
     }
 }
