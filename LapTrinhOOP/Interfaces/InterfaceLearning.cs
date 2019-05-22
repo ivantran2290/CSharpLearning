@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -9,15 +10,33 @@ namespace LapTrinhOOP.Interfaces
     public interface IDoAn
     {
         string Name { get; set; }
-        string getName();
+        float Gia { get; set; }
         void An();
-        double tinhTien();
+        void tinhTien();
         void gioMoCua();
     }
 
+    public abstract class DoAn : IDoAn
+    {
+        public abstract string Name { get; set; }
+        public abstract float Gia { get; set; }
+
+        public virtual void An()
+        {
+            Console.WriteLine(this.Name + "をたべた。");
+        }
+
+        public abstract void gioMoCua();
+
+        public virtual void tinhTien()
+        {
+            Console.WriteLine("Thanh tien:  " + this.Gia.ToString("N"));
+        }
+    }
+
     public interface IMiMuoc
-    {        
-        int thoiGianTrunMi();
+    {
+        int ThoiGianTrungMi { get; set; }
         void diMuaMi();
     }
 
@@ -26,115 +45,75 @@ namespace LapTrinhOOP.Interfaces
         void diMuaCa();
     }
 
-    public class Ramen : IDoAn, IMiMuoc
+    public class Ramen : DoAn, IMiMuoc
     {
-        private string _name;
-        public string Name { get => _name; set => _name = value; }
-        public string getName()
-        {
-            return "ラーメン";
-        }
-        public void An()
-        {
-            Console.WriteLine(this.getName() + "をたべた。");
-        }
-        public double tinhTien()
-        {
-            return 900;
-        }
-        public void gioMoCua()
+        private string _name = "Ramen";
+        private int _thoigianTrungMi = 2;
+        private float _gia = 800;
+        public override string Name { get => _name; set => _name = value; }
+        public int ThoiGianTrungMi { get => _thoigianTrungMi; set => _thoigianTrungMi = value; }
+        public override float Gia { get => _gia; set => _gia = value; }
+        
+        public override void gioMoCua()
         {
             Console.WriteLine("Mo cua buoi sang");
         }
         public void diMuaMi()
         {
-            Console.WriteLine("Di mua ve ve nau Ramen");
-        }
-        public int thoiGianTrunMi()
-        {
-            return 2;
+            Console.WriteLine("Di mua ve ve nau " + this.Name);
         }
     }
 
-    public class Soba : IDoAn, IMiMuoc
+    public class Soba : DoAn, IMiMuoc
     {
-        private string _name;
-        public string Name { get => _name; set => _name = value; }
-        public void An()
-        {
-            Console.WriteLine(this.getName() + "をたべた。");
-        }
+        private string _name = "そーば";
+        private int _thoigianTrungMi = 2;
+        private float _gia = 900;
+        public override string Name { get => _name; set => _name = value; }
+        public int ThoiGianTrungMi { get => _thoigianTrungMi; set => _thoigianTrungMi = value; }
+        public override float Gia { get => _gia; set => _gia = value; }
+
         public void diMuaMi()
         {
-            Console.Write("Di mua mi ve nau Soba");
+            Console.WriteLine("Di mua mi ve nau " + this.Name);
         }
-        public string getName()
+        public override void gioMoCua()
         {
-            return "そーば";
-        }
-        public void gioMoCua()
-        {
-            throw new NotImplementedException();
-        }
-        public int thoiGianTrunMi()
-        {
-            return 5;
-        }
-        public double tinhTien()
-        {
-            throw new NotImplementedException();
+            Console.WriteLine("Mo cua 24 gio");
         }
     }
 
-    public class Sushi : IDoAn, ICaSong
+    public class Sushi : DoAn, ICaSong
     {
-        private string _name;
-        public string Name { get => _name; set => _name = value; }
-        public string getName()
-        {
-            return "お寿司";
-        }
-        public void An()
-        {
-            Console.WriteLine(this.getName() + "をたべた。");
-        }
-        public double tinhTien()
-        {
-            return 1200;
-        }
-        public void gioMoCua()
+        private string _name = "お寿司";
+        private float _gia = 200;
+        public override string Name { get => _name; set => _name = value; }
+        public override float Gia { get => _gia; set => _gia = value; }
+
+        public override void gioMoCua()
         {
             Console.WriteLine("Mo cua buoi toi");
         }
         public void diMuaCa()
         {
-            Console.WriteLine("Di mua ca ve lam Sushi");
+            Console.WriteLine("Di mua ca ve lam " + this.Name);
         }
     }
 
-    public class ShaShimi : IDoAn, ICaSong
+    public class ShaShimi : DoAn, ICaSong
     {
-        private string _name;
-        public string Name { get => _name; set => _name = value; }
-        public void An()
-        {
-            Console.WriteLine(this.getName() + "をたべた。");
-        }
+        private string _name = "お刺身";
+        private float _gia = 2000;
+        public override string Name { get => _name; set => _name = value; }
+        public override float Gia { get => _gia; set => _gia = value; }
+
         public void diMuaCa()
         {
-            Console.WriteLine("Mua ca ve lam Sashimi");
+            Console.WriteLine("Mua ca ve lam " + this.Name);
         }
-        public string getName()
+        public override void gioMoCua()
         {
-            return "お刺身";
-        }
-        public void gioMoCua()
-        {
-            Console.WriteLine("Chi mo cua va cuoi tuan");
-        }
-        public double tinhTien()
-        {
-            return 100000;
+            Console.WriteLine("Chi mo cua vao cuoi tuan");
         }
     }
 

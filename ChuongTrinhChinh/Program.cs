@@ -4,6 +4,7 @@ using LapTrinhOOP.DaHinh;
 using LapTrinhOOP.HinhHoc;
 using LapTrinhOOP.BatDau;
 using HuongThaoCore;
+using LapTrinhHam;
 
 namespace ChuongTrinhChinh
 {
@@ -12,29 +13,35 @@ namespace ChuongTrinhChinh
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.Unicode;
-            LuyenTap_DaHinh();
+            //LuyenTap_DaHinh();
+            //ChuongTrinh.ChuongTrinh_TinhTuoiNhanVien();
+            LuyenTap_Interface();
         }
 
         public static void LuyenTap_Interface()
         {
             Ramen ramen = new Ramen();
             ramen.gioMoCua();
-            ramen.An();
             ramen.diMuaMi();
-            Console.WriteLine("Thoi gian trung {0} la {1} phut", ramen.getName(), ramen.thoiGianTrunMi());
-            Console.WriteLine("Thanh tien:  " + ramen.tinhTien().ToString("N"));
+            Console.WriteLine("Thoi gian trung {0} la {1} phut", ramen.Name, ramen.ThoiGianTrungMi);
+            ramen.An();
+            ramen.tinhTien();
             Console.WriteLine();
 
             Sushi suShi = new Sushi();
             suShi.gioMoCua();
-            suShi.An();
             suShi.diMuaCa();
-            Console.WriteLine("Thanh tien:  " + suShi.tinhTien().ToString("N"));
+            suShi.An();
+            suShi.tinhTien();
             Console.WriteLine();
 
             Soba soba = new Soba();
+            soba.gioMoCua();
+            soba.diMuaMi();
+            Console.WriteLine("Thoi gian trung {0} la {1} phut", soba.Name, soba.ThoiGianTrungMi);
             soba.An();
-            Console.WriteLine("Thoi gian trung {0} la {1} phut", soba.getName(), soba.thoiGianTrunMi());
+            soba.tinhTien();
+            Console.WriteLine();
         }
         public static void LuyenTap_InterfaceFactoreDP()
         {

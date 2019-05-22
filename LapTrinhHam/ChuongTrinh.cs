@@ -118,21 +118,18 @@ namespace LapTrinhHam
             // Khai bao bien ngay ngay sinh nhan vien
             DateTime ngaySinh;
 
-            // Khai bao bien ngay ngay hien hanh
-            DateTime ngayHienHanh;
-
             // Nhap ho ten nhan vien
+            Console.WriteLine("*******Chuong trinh tinh tuoi*******");
             hoTen = HTConnsole.NhapChuoi("Ho ten: ");
 
             // Nhap ngay sinh nhan vien
             ngaySinh = HTConnsole.NhapNgay("Ngay sinh format MM/DD/YYYY: ");
 
-            // Tinh nam hien hanh
-            ngayHienHanh = DateTime.Now;
-
             // Tinh tuoi nhan vien
+            int tuoi = DateTime.Today.Year - ngaySinh.Year;
 
             // Xuat tuoi nhan vien
+            Console.Write("Tuoi: " + tuoi);
         }
 
         public static void ChuongTrinh_TinhSoNgayGuiTietKiem()
